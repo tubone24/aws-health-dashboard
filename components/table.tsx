@@ -130,6 +130,7 @@ export const Table = (): JSX.Element => {
           ]}
           title={
             <div className="header">
+              <img src="/awslogo.png" />
               <a href="https://status.aws.amazon.com/">AWS Health Dashboard</a>
           </div>}
         />
@@ -181,6 +182,10 @@ export const Table = (): JSX.Element => {
       .header a{
         color: #e77f2f;
         text-decoration: none;
+      }
+      
+      .header img {
+        height: 1em;
       }
 
       .title a {
