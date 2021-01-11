@@ -116,6 +116,7 @@ export const Table = (): JSX.Element => {
           isLoading={loading}
           actions={[
             {
+              //@ts-ignore
               icon: tableIcons.Refresh,
               tooltip: 'Refresh Data',
               isFreeAction: true,
