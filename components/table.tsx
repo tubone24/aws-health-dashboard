@@ -45,7 +45,7 @@ export const Table = (): JSX.Element => {
   const [data, setData] = useState([{
     service_name: "Auto Scaling (N. Virginia)",
     summary: "[RESOLVED] Increased API Error Rates",
-    date: "2021-01-08T06:21:03+09:00Z",
+    date: "1542849575",
     status: "1",
     details: "",
     description: "The issue has been resolved and the service is operating normally.",
@@ -87,7 +87,7 @@ export const Table = (): JSX.Element => {
             {title: 'Service', field: 'service', width: 10},
             {title: 'Region', field: 'region', lookup: regionNameMapping},
             {title: 'Summary', field: 'summary'},
-            {title: 'Date (' + dayjs.tz.guess() + ')', field: 'date', defaultSort: 'desc', type: 'string'},
+            {title: 'Date (' + dayjs.tz.guess() + ')', field: 'date', render: rowData => <div>{dayjs.unix(Number(rowData.date)).format('YYYY-MM-DDTHH:mm:ssZ[Z]')}</div>, defaultSort: 'desc', type: 'string'},
             {title: 'Status', field: 'status', lookup: {0: 'Service is operating normally', 1: 'Informational message', 2: 'Performance issues', 3: 'Service disruption'}},
           ]}
           data={data}
@@ -100,7 +100,7 @@ export const Table = (): JSX.Element => {
                     {rowData.summary}
                   </div>
                   <div className="description">
-                    {rowData.date} {rowData.service_name}
+                    {dayjs.unix(Number(rowData.date)).format('YYYY-MM-DDTHH:mm:ss')} {rowData.service_name}
                   </div>
                   <div className="code">
                     {rowData.description}

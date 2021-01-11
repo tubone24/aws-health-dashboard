@@ -4,12 +4,6 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
 import dayjs from 'dayjs'
 
-import utc from 'dayjs/plugin/utc';
-import timezone from 'dayjs/plugin/timezone';
-
-dayjs.extend(utc);
-dayjs.extend(timezone);
-
 interface AwsStatusResp {
   archive: AwsStatusArchive[]
 }
@@ -33,8 +27,8 @@ const handler = async(req: NextApiRequest, res: NextApiResponse) => {
     service_name: x.service_name,
     summary: x.summary,
     region: x.service.split("-").slice(1).join("-") || 'Global',
-    date: dayjs.unix(Number(x.date)).format('YYYY-MM-DDTHH:mm:ssZ[Z]') ,
-    // date: x.date,
+    //date: dayjs.unix(Number(x.date)).format('YYYY-MM-DDTHH:mm:ssZ[Z]') ,
+    date: x.date,
     status: x.status,
     details: x.details,
     service: x.service.split("-")[0],
