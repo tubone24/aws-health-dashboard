@@ -4,7 +4,12 @@ import tableIcons from '../components/tableIcons'
 import {useRecoilState,} from 'recoil'
 import awsState from '../store/aws'
 import axios from 'axios'
-import {unix, Dayjs} from 'dayjs'
+import dayjs from 'dayjs'
+
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 export const Table = (): JSX.Element => {
   const regionNameMapping = {
@@ -52,7 +57,7 @@ export const Table = (): JSX.Element => {
   )
   useEffect(() => {
     axios
-      .get("/api/aws")
+      .get("/api/aws", {params: {timezone: dayjs.tz.guess()}})
       .then(res => res.data)
       .then(res => {
         setLoading(false)

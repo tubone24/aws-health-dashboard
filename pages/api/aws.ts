@@ -1,8 +1,14 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 import { NextApiRequest, NextApiResponse } from 'next'
-import axios from 'axios';
-import {unix} from 'dayjs'
+import axios from 'axios'
+import dayjs from 'dayjs'
+
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 interface AwsStatusResp {
   archive: AwsStatusArchive[]
@@ -19,12 +25,14 @@ interface AwsStatusArchive {
 }
 
 const handler = async(req: NextApiRequest, res: NextApiResponse) => {
+  const timezone = req.query.timezone || 'Asia/Tokyo';
+  dayjs.tz.setDefault(timezone.toString());
   const resp = await axios.get<AwsStatusResp>("https://status.aws.amazon.com/data.json")
   const handlerResp = resp.data.archive.map(x => ({
     service_name: x.service_name,
     summary: x.summary,
     region: x.service.split("-").slice(1).join("-") || 'Global',
-    date: unix(Number(x.date)).format('YYYY-MM-DDTHH:mm:ssZ[Z]') ,
+    date: dayjs.unix(Number(x.date)).format('YYYY-MM-DDTHH:mm:ssZ[Z]') ,
     // date: x.date,
     status: x.status,
     details: x.details,
