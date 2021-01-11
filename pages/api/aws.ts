@@ -27,6 +27,7 @@ interface AwsStatusArchive {
 const handler = async(req: NextApiRequest, res: NextApiResponse) => {
   const timezone = req.query.timezone || 'Asia/Tokyo';
   dayjs.tz.setDefault(timezone.toString());
+  console.log(timezone.toString())
   const resp = await axios.get<AwsStatusResp>("https://status.aws.amazon.com/data.json")
   const handlerResp = resp.data.archive.map(x => ({
     service_name: x.service_name,
