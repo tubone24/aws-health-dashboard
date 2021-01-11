@@ -116,6 +116,7 @@ export const Table = (): JSX.Element => {
           isLoading={loading}
           actions={[
             {
+              // Issue: https://github.com/mbrn/material-table/issues/51
               //@ts-ignore
               icon: tableIcons.Refresh,
               tooltip: 'Refresh Data',
