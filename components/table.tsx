@@ -87,7 +87,7 @@ export const Table = (): JSX.Element => {
             {title: 'Service', field: 'service', width: 10},
             {title: 'Region', field: 'region', lookup: regionNameMapping},
             {title: 'Summary', field: 'summary'},
-            {title: 'Date', field: 'date', defaultSort: 'desc', type: 'string'},
+            {title: 'Date (' + dayjs.tz.guess() + ')', field: 'date', defaultSort: 'desc', type: 'string'},
             {title: 'Status', field: 'status', lookup: {0: 'Service is operating normally', 1: 'Informational message', 2: 'Performance issues', 3: 'Service disruption'}},
           ]}
           data={data}
