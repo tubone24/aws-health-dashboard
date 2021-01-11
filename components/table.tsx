@@ -185,7 +185,7 @@ export const Table = (): JSX.Element => {
       }
       
       .header img {
-        height: 1em;
+        height: 0.7em;
       }
 
       .title a {
