@@ -2,6 +2,8 @@
 
 ![img](https://i.imgur.com/AoeQGrV.png)
 
+[![NodeCI](https://github.com/tubone24/aws-health-dashboard/workflows/NodeCI/badge.svg)](https://github.com/tubone24/aws-health-dashboard/actions?query=workflow%3ANodeCI)
+[![Coverage Status](https://coveralls.io/repos/github/tubone24/aws-health-dashboard/badge.svg?branch=master)](https://coveralls.io/github/tubone24/aws-health-dashboard?branch=master)
 [![license](https://img.shields.io/github/license/tubone24/aws-health-dashboard.svg)](LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 [![MIT](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
@@ -18,6 +20,7 @@ The official [AWS Service Health Dashboard](https://status.aws.amazon.com/) is d
 - [Install](#install)
 - [Test & Lint](#test--lint)
 - [Demo](#demo)
+- [Contributing](#contributing)
 - [License](#license)
 
 ## Background
@@ -65,6 +68,11 @@ Please update the snapshot using the command below.
 npm test -- -u
 ```
 
+When you open a PR towards the master branch, the CI configured in GitHub Actions will run the automated tests and update the results and test coverage.
+
+[![NodeCI](https://github.com/tubone24/aws-health-dashboard/workflows/NodeCI/badge.svg)](https://github.com/tubone24/aws-health-dashboard/actions?query=workflow%3ANodeCI)
+[![Coverage Status](https://coveralls.io/repos/github/tubone24/aws-health-dashboard/badge.svg?branch=master)](https://coveralls.io/github/tubone24/aws-health-dashboard?branch=master)
+
 ## Demo
 
 You can use the demo site on this link below.
@@ -72,6 +80,14 @@ You can use the demo site on this link below.
 <https://aws-health-dashboard.vercel.app/>
 
 ![img](https://i.imgur.com/XblRysI.png)
+
+## Contributing
+
+See [the contributing file](CONTRIBUTING.md)!
+
+PRs accepted.
+
+Small note: If editing the Readme, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
 
 ## License
 
