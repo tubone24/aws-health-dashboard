@@ -25,6 +25,8 @@ jobs:
           npm install
           npm run build
           npm run test-all
+        env:
+          TZ:  'Asia/Tokyo'
       - name: Use Coveralls
         uses: coverallsapp/github-action@master
         with:
