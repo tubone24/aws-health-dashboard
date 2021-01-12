@@ -1,4 +1,5 @@
 # AWS Health Dashboard
+
 ![img](https://i.imgur.com/AoeQGrV.png)
 
 [![license](https://img.shields.io/github/license/tubone24/aws-health-dashboard.svg)](LICENSE)
@@ -6,7 +7,7 @@
 
 > Easily check the status of AWS
 
-This is a web page where you can check the status of AWS. 
+This is a web page where you can check the status of AWS.
 
 The official [AWS Service Health Dashboard](https://status.aws.amazon.com/) is difficult to use, so I recreated it using Next.js Vercel.
 

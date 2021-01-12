@@ -17,7 +17,11 @@ import Search from '@material-ui/icons/Search'
 import ViewColumn from '@material-ui/icons/ViewColumn'
 import Refresh from '@material-ui/icons/Refresh'
 
-const tableIcons: {[key: string]: React.ForwardRefExoticComponent<React.RefAttributes<SVGSVGElement>>} = {
+const tableIcons: {
+  [key: string]: React.ForwardRefExoticComponent<
+    React.RefAttributes<SVGSVGElement>
+  >
+} = {
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
   Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
   Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
