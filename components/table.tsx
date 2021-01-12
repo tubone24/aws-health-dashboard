@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useRecoilState } from 'recoil'
 import MaterialTable from 'material-table'
-import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
+import Snackbar from '@material-ui/core/Snackbar'
+import MuiAlert, { AlertProps } from '@material-ui/lab/Alert'
 import tableIcons from '../components/tableIcons'
 import awsState from '../store/aws'
 import axios from 'axios'
@@ -15,7 +15,7 @@ dayjs.extend(utc)
 dayjs.extend(timezone)
 
 const Alert = (props: AlertProps) => {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
+  return <MuiAlert elevation={6} variant="filled" {...props} />
 }
 
 export const Table = (): JSX.Element => {
@@ -47,27 +47,27 @@ export const Table = (): JSX.Element => {
   // 20200112: dangerouslyAllowMutabilityでできた
   const [aws, setAws] = useRecoilState(awsState)
   const [loading, setLoading] = useState(true)
-  const [slackBarOpen, setSlackBarOpen] = React.useState(false);
-  const [apiErrorMsg, setApiErrorMsg] = React.useState("");
+  const [slackBarOpen, setSlackBarOpen] = React.useState(false)
+  const [apiErrorMsg, setApiErrorMsg] = React.useState('')
   useEffect(() => {
-    // https://qiita.com/daishi/items/4423878a1cd7a0ab69eb
-    const f = async () => {
-      await getAwsStatus()
-      setLoading(false)
-    }
-    f()
+    getAwsStatus()
+    setLoading(false)
   }, [])
   const getAwsStatus = () => {
-    axios.get('/api/aws').then(resp => {
-      setAws(resp.data)
-      setLoading(false)
-    }).catch(error => {
-      console.error(error.response)
-      setSlackBarOpen(true)
-      setApiErrorMsg(error.response.statusText || "Error")
-      setAws([])
-      setLoading(false)
-    })}
+    axios
+      .get('/api/aws')
+      .then((resp) => {
+        setAws(resp.data)
+        setLoading(false)
+      })
+      .catch((error) => {
+        console.error(error.response)
+        setSlackBarOpen(true)
+        setApiErrorMsg(error.response.statusText || 'Error')
+        setAws([])
+        setLoading(false)
+      })
+  }
   const handleSnackBarClose = () => {
     setSlackBarOpen(false)
   }
@@ -157,7 +157,11 @@ export const Table = (): JSX.Element => {
             </div>
           }
         />
-        <Snackbar open={slackBarOpen} autoHideDuration={6000} onClose={handleSnackBarClose}>
+        <Snackbar
+          open={slackBarOpen}
+          autoHideDuration={6000}
+          onClose={handleSnackBarClose}
+        >
           <Alert onClose={handleSnackBarClose} severity="error">
             AWS Status API Failed: <b>{apiErrorMsg}</b>
           </Alert>
