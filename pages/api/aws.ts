@@ -19,7 +19,7 @@ interface AwsStatusArchive {
 
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
   axios
-    .get<AwsStatusResp>('https://status.aws.amazon.com/data.json1')
+    .get<AwsStatusResp>('https://status.aws.amazon.com/data.json')
     .then((resp) => {
       const handlerResp = resp.data.archive.map((x) => ({
         // eslint-disable-next-line @typescript-eslint/camelcase
