@@ -43,6 +43,7 @@ export const Table = (): JSX.Element => {
     'eu-north-1': 'Europe (Stockholm)',
     'me-south-1': 'Middle East (Bahrain)',
     'sa-east-1': 'South America (São Paulo)',
+    'global': 'Global',
   }
   // 20200112: dangerouslyAllowMutabilityでできた
   const [aws, setAws] = useRecoilState(awsState)

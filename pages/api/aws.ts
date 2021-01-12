@@ -25,7 +25,7 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
         // eslint-disable-next-line @typescript-eslint/camelcase
         service_name: x.service_name,
         summary: x.summary,
-        region: x.service.split('-').slice(1).join('-') || 'Global',
+        region: (x.service.split('-').slice(1).join('-') === '') ? 'global': x.service.split('-').slice(1).join('-'),
         date: x.date,
         status: x.status,
         details: x.details,
