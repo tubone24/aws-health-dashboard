@@ -5,10 +5,11 @@ import handler, { AwsStatusResp } from '../../../pages/api/aws'
 import { NextApiRequest, NextApiResponse } from 'next'
 // tslint:disable-next-line:no-any
 const myAxios: jest.Mocked<AxiosInstance> = axios as any
-// eslint-disable-next-line @typescript-eslint/camelcase
+
 const mockData: AwsStatusResp = {
   archive: [
     {
+      // eslint-disable-next-line @typescript-eslint/camelcase
       service_name: 'test',
       date: '12345678',
       description: 'test',
