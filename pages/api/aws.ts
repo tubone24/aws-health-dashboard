@@ -3,11 +3,11 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
 
-interface AwsStatusResp {
+export interface AwsStatusResp {
   archive: AwsStatusArchive[]
 }
 
-interface AwsStatusArchive {
+export interface AwsStatusArchive {
   service_name: string
   summary: string
   date: string
