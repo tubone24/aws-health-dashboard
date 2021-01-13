@@ -16,6 +16,7 @@ import SaveAlt from '@material-ui/icons/SaveAlt'
 import Search from '@material-ui/icons/Search'
 import ViewColumn from '@material-ui/icons/ViewColumn'
 import Refresh from '@material-ui/icons/Refresh'
+import BarChartIcon from '@material-ui/icons/BarChart'
 
 const tableIcons: {
   [key: string]: React.ForwardRefExoticComponent<
@@ -44,5 +45,6 @@ const tableIcons: {
   ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref} />),
   ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />),
   Refresh: forwardRef((props, ref) => <Refresh {...props} ref={ref} />),
+  BarChartIcon: forwardRef((props, ref) => <BarChartIcon {...props} ref={ref} />),
 }
 export default tableIcons

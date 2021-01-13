@@ -1,57 +1,78 @@
 import React from 'react'
-import Head from 'next/head'
 import Table from '../components/table'
-
-import { RecoilRoot } from 'recoil'
+import Graphs from '../components/graphs'
+import { useRecoilValue } from "recoil";
+import showGraph from '../store/showGraph'
 
 const Home = (): JSX.Element => {
+  const showG = useRecoilValue(showGraph)
   return (
     <>
-      <RecoilRoot>
-        <Head>
-          <title>AWS Health Dashboard</title>
-          <meta property="og:title" content="AWS Health Dashboard" />
-          <meta
-            property="og:description"
-            content="This is a web page where you can check the status of AWS. The official AWS Service Health Dashboard is difficult to use, so I recreated it using Next.js Vercel."
-          />
-          <meta name="keywords" content="AWS, status" />
-          <meta property="og:type" content="website" />
-          <meta
-            property="og:url"
-            content="https://aws-health-dashboard.vercel.app/"
-          />
-          <meta property="og:image" content="https://i.imgur.com/XblRysI.png" />
-          <meta property="og:site_name" content="AWS Health Dashboard" />
-          <meta name="twitter:card" content="summary" />
-          <meta name="twitter:site" content="@meitante1conan" />
-          <meta
-            name="twitter:url"
-            content="https://aws-health-dashboard.vercel.app/"
-          />
-          <meta name="twitter:title" content="AWS Health Dashboard" />
-          <meta
-            name="twitter:description"
-            content="This is a web page where you can check the status of AWS."
-          />
-          <meta
-            name="twitter:image"
-            content="https://i.imgur.com/XblRysI.png"
-          />
-          <meta property="fb:app_id" content="280941406476272" />
-          <link
-            rel="canonical"
-            href="https://aws-health-dashboard.vercel.app/"
-          />
-          <link
-            rel="apple-touch-icon"
-            href={'https://i.imgur.com/MFmxl0F.png'}
-          />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <Table />
-      </RecoilRoot>
+    <Table />
+      { showG ? <Graphs /> : null }
+      <footer>
+        <a
+          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Powered by{' '}
+          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
+        </a>
+        <a href="https://github.com/tubone24">&nbsp; ©tubone24</a>
+      </footer>
+      <style jsx>{`
+        footer {
+          width: 100%;
+          height: 100px;
+          border-top: 1px solid #eaeaea;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        footer img {
+          margin-left: 0.5rem;
+        }
+
+        footer a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        .logo {
+          height: 1em;
+        }
+
+        @media (max-width: 600px) {
+          .grid {
+            width: 100%;
+            flex-direction: column;
+          }
+        }
+      `}</style>
+      <style jsx global>{`
+        html,
+        body {
+          padding: 0;
+          margin: 0;
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+            sans-serif;
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+      `}</style>
     </>
+
   )
 }
 
