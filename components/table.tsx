@@ -11,7 +11,7 @@ import dayjs from 'dayjs'
 
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
-import {regionNameMapping, statusMapping} from './const';
+import { regionNameMapping, statusMapping } from './const'
 
 dayjs.extend(utc)
 dayjs.extend(timezone)
@@ -78,7 +78,7 @@ export const Table = (): JSX.Element => {
             {
               title: 'Status',
               field: 'status',
-              lookup: statusMapping
+              lookup: statusMapping,
             },
           ]}
           data={aws}
@@ -140,9 +140,12 @@ export const Table = (): JSX.Element => {
           title={
             <div className="header">
               <img src="/awslogo.png" />
-              <a href="https://aws-health-dashboard.vercel.app/">AWS Health Dashboard</a>
+              <a href="https://aws-health-dashboard.vercel.app/">
+                AWS Health Dashboard
+              </a>
             </div>
-          } />
+          }
+        />
         <Snackbar
           open={slackBarOpen}
           autoHideDuration={6000}
@@ -153,7 +156,6 @@ export const Table = (): JSX.Element => {
           </Alert>
         </Snackbar>
       </main>
-
 
       <style jsx>{`
         a {

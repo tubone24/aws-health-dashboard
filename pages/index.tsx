@@ -1,15 +1,15 @@
 import React from 'react'
 import Table from '../components/table'
 import Graphs from '../components/graphs'
-import { useRecoilValue } from "recoil";
+import { useRecoilValue } from 'recoil'
 import showGraph from '../store/showGraph'
 
 const Home = (): JSX.Element => {
   const showG = useRecoilValue(showGraph)
   return (
     <>
-    <Table />
-      { showG ? <Graphs /> : null }
+      <Table />
+      {showG ? <Graphs /> : null}
       <footer>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -72,7 +72,6 @@ const Home = (): JSX.Element => {
         }
       `}</style>
     </>
-
   )
 }
 

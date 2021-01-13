@@ -1,5 +1,3 @@
-
-
 export const regionNameMapping = {
   'us-east-2': 'US East (Ohio)',
   'us-east-1': 'US East (N. Virginia)',
@@ -27,14 +25,15 @@ export const regionNameMapping = {
   'me-south-1': 'Middle East (Bahrain)',
   'sa-east-1': 'South America (São Paulo)',
   'us-standard': 'US Standard',
-  'global': 'Global',
+  global: 'Global',
 }
 
 export const statusMapping = {
   0: 'Service is operating normally',
   1: 'Informational message',
   2: 'Performance issues',
-  3: 'Service disruption'}
+  3: 'Service disruption',
+}
 
 export const chartBackGroundColor = [
   'rgba(255, 99, 132, 0.2)',

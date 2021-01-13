@@ -25,11 +25,17 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
         // eslint-disable-next-line @typescript-eslint/camelcase
         service_name: x.service_name,
         summary: x.summary,
-        region: (x.service.includes('management-console')) ? 'global': (x.service.split('-').slice(1).join('-') === '') ? 'global': x.service.split('-').slice(1).join('-'),
+        region: x.service.includes('management-console')
+          ? 'global'
+          : x.service.split('-').slice(1).join('-') === ''
+          ? 'global'
+          : x.service.split('-').slice(1).join('-'),
         date: x.date,
         status: x.status,
         details: x.details,
-        service: (x.service.includes('management-console')) ? 'management-console': x.service.split('-')[0],
+        service: x.service.includes('management-console')
+          ? 'management-console'
+          : x.service.split('-')[0],
         description: x.description
           .replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, '')
           .replace(/&nbsp;/g, '\n'),

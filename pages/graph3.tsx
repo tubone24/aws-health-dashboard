@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
 import AlertPerService from '../components/alertPerService'
-import Link from "next/link";
+import Link from 'next/link'
 
 dayjs.extend(utc)
 dayjs.extend(timezone)

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import Link from 'next/link'
 import AlertPerRegion from '../components/alertPerRegion'
 import AlertPerStatus from '../components/alertPerStatus'
@@ -9,9 +9,9 @@ export const Graphs = (): JSX.Element => {
       <main>
         <div className="grid">
           <Link href="/graph1">
-          <div className="card">
-            <AlertPerRegion />
-          </div>
+            <div className="card">
+              <AlertPerRegion />
+            </div>
           </Link>
 
           <Link href="/graph2">
@@ -26,10 +26,7 @@ export const Graphs = (): JSX.Element => {
             </div>
           </Link>
 
-          <a
-            href="https://status.aws.amazon.com/"
-            className="card"
-          >
+          <a href="https://status.aws.amazon.com/" className="card">
             <h3>More Information? &rarr;</h3>
             <p>Access AWS Service Health Dashboard (Official)</p>
           </a>
@@ -52,15 +49,15 @@ export const Graphs = (): JSX.Element => {
           color: #e77f2f;
           text-decoration: none;
         }
-        
-      main {
-        padding: 5rem 0;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
+
+        main {
+          padding: 5rem 0;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
 
         .header img {
           height: 0.7em;

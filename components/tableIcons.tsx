@@ -45,6 +45,8 @@ const tableIcons: {
   ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref} />),
   ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />),
   Refresh: forwardRef((props, ref) => <Refresh {...props} ref={ref} />),
-  BarChartIcon: forwardRef((props, ref) => <BarChartIcon {...props} ref={ref} />),
+  BarChartIcon: forwardRef((props, ref) => (
+    <BarChartIcon {...props} ref={ref} />
+  )),
 }
 export default tableIcons
