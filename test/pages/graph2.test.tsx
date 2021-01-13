@@ -1,11 +1,11 @@
 import React from 'react'
 import { render } from '../testUtils'
-import Home from '../../pages/index'
+import Graph2 from '../../pages/graph2'
 import {RecoilRoot} from "recoil";
 
-describe('Home page', () => {
+describe('Graph2', () => {
   it('matches snapshot', () => {
-    const { asFragment } = render(<RecoilRoot><Home /></RecoilRoot>, {})
+    const { asFragment } = render(<RecoilRoot><Graph2 /></RecoilRoot>, {})
     // https://github.com/mui-org/material-ui/issues/21293#issuecomment-654921524
     expect(
       asFragment()
