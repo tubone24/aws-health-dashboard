@@ -2,13 +2,15 @@ import { Bar } from 'react-chartjs-2'
 import { chartBorderColor, chartBackGroundColor } from './const'
 import React from "react";
 
-interface BarGraphData {
+type Props = {
   labels: string[];
   data: number[];
   title: string
 }
 
-const BarGraph = ({labels, data, title}: BarGraphData): JSX.Element => {
+// named export because of storybook proptypes
+// https://github.com/strothj/react-docgen-typescript-loader#export-names
+export const BarGraph: React.FC<Props> = ({labels, data, title}): JSX.Element => {
   const graphParam = {
     labels: labels,
     datasets: [
