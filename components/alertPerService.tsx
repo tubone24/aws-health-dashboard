@@ -1,8 +1,6 @@
 import { useRecoilValue } from 'recoil'
 import awsState from '../store/aws'
 import React from 'react'
-import { Bar } from 'react-chartjs-2'
-import { chartBackGroundColor, chartBorderColor } from './const'
 import BarGraph from "./barGraph";
 
 export const AlertPerService = (): JSX.Element => {

@@ -1,8 +1,7 @@
 import { useRecoilValue } from 'recoil'
 import awsState from '../store/aws'
 import React from 'react'
-import { Bar } from 'react-chartjs-2'
-import { statusMapping, chartBorderColor, chartBackGroundColor } from './const'
+import { statusMapping } from './const'
 import BarGraph from "./barGraph";
 export const AlertPerStatus = (): JSX.Element => {
   // 20200112: dangerouslyAllowMutabilityでできた
