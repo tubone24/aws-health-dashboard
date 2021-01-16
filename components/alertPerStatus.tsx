@@ -3,6 +3,7 @@ import awsState from '../store/aws'
 import React from 'react'
 import { Bar } from 'react-chartjs-2'
 import { statusMapping, chartBorderColor, chartBackGroundColor } from './const'
+import BarGraph from "./barGraph";
 export const AlertPerStatus = (): JSX.Element => {
   // 20200112: dangerouslyAllowMutabilityでできた
   const aws = useRecoilValue(awsState)
@@ -19,21 +20,9 @@ export const AlertPerStatus = (): JSX.Element => {
         }, 0)
     )
   }
-  const graphParam = {
-    labels: labels,
-    datasets: [
-      {
-        label: 'Alert per status',
-        data: data,
-        backgroundColor: chartBackGroundColor,
-        borderColor: chartBorderColor,
-        borderWidth: 1,
-      },
-    ],
-  }
   return (
     <div className="container">
-      <Bar data={graphParam} />
+      <BarGraph labels={labels} data={data} title="Alert per status" />
     </div>
   )
 }

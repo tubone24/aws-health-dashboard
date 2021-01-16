@@ -3,6 +3,7 @@ import awsState from '../store/aws'
 import React from 'react'
 import { Bar } from 'react-chartjs-2'
 import { chartBackGroundColor, chartBorderColor } from './const'
+import BarGraph from "./barGraph";
 
 export const AlertPerService = (): JSX.Element => {
   // 20200112: dangerouslyAllowMutabilityでできた
@@ -18,21 +19,9 @@ export const AlertPerService = (): JSX.Element => {
         }, 0)
     )
   }
-  const graphParam = {
-    labels: labels,
-    datasets: [
-      {
-        label: 'Alert per service',
-        data: data,
-        backgroundColor: chartBackGroundColor,
-        borderColor: chartBorderColor,
-        borderWidth: 1,
-      },
-    ],
-  }
   return (
     <div className="container">
-      <Bar data={graphParam} />
+      <BarGraph labels={labels} data={data} title="Alert per service" />
     </div>
   )
 }

@@ -7,6 +7,8 @@ import {
   chartBackGroundColor,
   chartBorderColor,
 } from './const'
+import BarGraph from './barGraph'
+
 export const AlertPerRegion = (): JSX.Element => {
   // 20200112: dangerouslyAllowMutabilityでできた
   const aws = useRecoilValue(awsState)
@@ -23,21 +25,9 @@ export const AlertPerRegion = (): JSX.Element => {
         }, 0)
     )
   }
-  const graphParam = {
-    labels: labels,
-    datasets: [
-      {
-        label: 'Alert per region',
-        data: data,
-        backgroundColor: chartBackGroundColor,
-        borderColor: chartBorderColor,
-        borderWidth: 1,
-      },
-    ],
-  }
   return (
     <div className="container">
-      <Bar data={graphParam} />
+      <BarGraph labels={labels} data={data} title="Alert per region" />
     </div>
   )
 }
