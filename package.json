@@ -38,7 +38,7 @@
     "jest-canvas-mock": "^2.3.0",
     "material-table": "^1.69.2",
     "next": "latest",
-    "node-mocks-http": "^1.10.0",
+    "node-mocks-http": "1.11.0",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.11.1",
     "react-dom": "^16.13.1",
