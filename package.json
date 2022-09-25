@@ -35,7 +35,7 @@
     "chart.js": "^2.9.4",
     "dayjs": "^1.10.3",
     "dayjs-plugin-utc": "^0.1.2",
-    "jest-canvas-mock": "^2.3.0",
+    "jest-canvas-mock": "2.4.0",
     "material-table": "^1.69.2",
     "next": "latest",
     "node-mocks-http": "^1.10.0",
